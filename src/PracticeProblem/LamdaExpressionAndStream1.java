@@ -42,11 +42,6 @@ public class LamdaExpressionAndStream1 {
         System.out.println("Solution to problem 2: " + practice2);
 
     }
-
-    /*  You have a list of employees with name and salary.
-      1 Keep only employees with a salary greater than 50,000.
-      2 Sort them by salary in descending order.
-      3 Print just their names in uppercase, separated by commas. */
     static class Employee {
         String name;
         double salary;
@@ -64,7 +59,10 @@ public class LamdaExpressionAndStream1 {
             return salary;
         }
     }
-
+    /*  You have a list of employees with name and salary.
+      1 Keep only employees with a salary greater than 50,000.
+      2 Sort them by salary in descending order.
+      3 Print just their names in uppercase, separated by commas. */
     public static void problem3() {
         List<Employee> employees = Arrays.asList(
                 new Employee("Ramesh", 60000),
@@ -83,10 +81,6 @@ public class LamdaExpressionAndStream1 {
 
         System.out.println("Solution to problem 3: " + practice3);
     }
-
-    /*You have a list of employees with name, department, and salary.
-    1 Group employees by their department.
-    2 For each department, print the list of employee names (uppercase) separated by commas. */
     static class Employee1 {
         String name;
         String department;
@@ -110,7 +104,9 @@ public class LamdaExpressionAndStream1 {
             return salary;
         }
     }
-
+    /*You have a list of employees with name, department, and salary.
+    1 Group employees by their department.
+    2 For each department, print the list of employee names (uppercase) separated by commas. */
     public static void problem4() {
         List<Employee1> employees1 = Arrays.asList(
                 new Employee1("Ramesh", "IT", 60000),
@@ -134,7 +130,6 @@ public class LamdaExpressionAndStream1 {
         practice4.forEach((a, b) -> System.out.println(a + " -> " + b));
 
     }
-
     //    Given a list of integers, compute the sum of the squares of all even numbers using lambdas/streams.
     public static void problem5() {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
