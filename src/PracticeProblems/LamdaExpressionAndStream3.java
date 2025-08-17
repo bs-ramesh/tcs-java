@@ -1,8 +1,6 @@
 package PracticeProblems;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class LamdaExpressionAndStream3 {
@@ -10,6 +8,7 @@ public class LamdaExpressionAndStream3 {
         problem1();
         problem2();
         problem3();
+        problem4();
     }
 
     //given list of numbers skip first 3 and add only 4 numbers to list
@@ -35,7 +34,7 @@ public class LamdaExpressionAndStream3 {
         System.out.println("output to problem 2 : " + practice2);
     }
 
-//    Find the average of all numbers greater than 15 using streams.
+    //    Find the average of all numbers greater than 15 using streams.
     public static void problem3() {
         List<Integer> nums = Arrays.asList(5, 10, 15, 20, 25, 30, 35, 40);
 
@@ -44,5 +43,43 @@ public class LamdaExpressionAndStream3 {
                                .collect(Collectors.averagingInt(a -> a));
         System.out.println("output to problem 2 : " + practice3);
 
+    }
+
+    static class Employee {
+        private String name;
+        private double salary;
+
+        public Employee(String name, double salary) {
+            this.name = name;
+            this.salary = salary;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public double getSalary() {
+            return salary;
+        }
+
+        @Override
+        public String toString() {
+            return name + " - " + salary;
+        }
+    }
+
+    public static void problem4() {
+        List<Employee> employees = Arrays.asList(
+                new Employee("Ramesh", 60000),
+                new Employee("Bharath", 45000),
+                new Employee("Suresh", 75000),
+                new Employee("Anil", 50000)
+        );
+
+//    From a list of employees, find the employee who has the lowest salary.
+        Optional<Employee> practice4 = employees.stream()
+                                                .collect(Collectors.minBy(Comparator.comparing(Employee::getSalary)));
+
+        practice4.ifPresent(System.out::println);
     }
 }
