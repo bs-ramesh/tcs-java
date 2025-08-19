@@ -1,4 +1,4 @@
-package PracticeProblems;
+package PracticeProblems.FunctionalInterface;
 
 /*Create a functional interface StringOperation with one method String operate(String s).
 1 Use it with a lambda to reverse a string.

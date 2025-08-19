@@ -1,9 +1,9 @@
-package PracticeProblems;
+package PracticeProblems.LamdaAndStreams;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class LamdaExpressionAndStream3 {
+public class DailyPractice3 {
     public static void main(String[] args) {
         problem1();
         problem2();
@@ -67,6 +67,7 @@ public class LamdaExpressionAndStream3 {
             return name + " - " + salary;
         }
     }
+    //    From a list of employees, find the employee who has the lowest salary.
 
     public static void problem4() {
         List<Employee> employees = Arrays.asList(
@@ -76,7 +77,7 @@ public class LamdaExpressionAndStream3 {
                 new Employee("Anil", 50000)
         );
 
-//    From a list of employees, find the employee who has the lowest salary.
+
         Optional<Employee> practice4 = employees.stream()
                                                 .collect(Collectors.minBy(Comparator.comparing(Employee::getSalary)));
 

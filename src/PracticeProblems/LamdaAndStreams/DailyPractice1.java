@@ -1,4 +1,4 @@
-package PracticeProblems;
+package PracticeProblems.LamdaAndStreams;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 
-public class LamdaExpressionAndStream1 {
+public class DailyPractice1 {
 
     public static void main(String[] args) {
         problem1();
@@ -135,8 +135,9 @@ public class LamdaExpressionAndStream1 {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
 
         int practice5 = numbers.stream()
-                               .filter(a -> a % 2 == 0)
-                               .reduce(0, (a, b) -> a + (b * b));
+                               .filter(n -> n % 2 == 0)
+                               .map(n -> n * n)
+                               .reduce(0, Integer::sum);
 
         System.out.println("Solution to problem 5: "+ practice5);    }
 

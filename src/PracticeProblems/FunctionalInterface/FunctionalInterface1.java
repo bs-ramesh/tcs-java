@@ -1,4 +1,4 @@
-package PracticeProblems;
+package PracticeProblems.FunctionalInterface;
 
 /* Create a functional interface Calculator with one method int calculate(int a, int b).
 Use it with a lambda to perform addition of two numbers.

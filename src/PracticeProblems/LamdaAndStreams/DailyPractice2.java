@@ -1,10 +1,10 @@
-package PracticeProblems;
+package PracticeProblems.LamdaAndStreams;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class LamdaExpressionAndStream2 {
+public class DailyPractice2 {
     public static void main(String[] args) {
         problem1();
         problem2();

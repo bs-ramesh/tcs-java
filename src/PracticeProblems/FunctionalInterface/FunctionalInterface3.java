@@ -1,4 +1,4 @@
-package PracticeProblems;
+package PracticeProblems.FunctionalInterface;
 
 /*Create a functional interface NumberCheck that takes an integer and returns a boolean.
 Implement lambdas for checking:
