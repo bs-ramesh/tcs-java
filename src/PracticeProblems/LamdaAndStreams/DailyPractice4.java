@@ -1,6 +1,7 @@
 package PracticeProblems.LamdaAndStreams;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class DailyPractice4 {
@@ -9,7 +10,8 @@ public class DailyPractice4 {
         problem2();
         problem3();
         problem4();
-
+        problem5();
+        problem6();
     }
 
     //    Given a list of integers, find the second-highest number using streams.
@@ -67,7 +69,40 @@ public class DailyPractice4 {
                                 .orElseThrow(()-> new NoSuchElementException("not found"));
 
         System.out.println("problem 4 output : " + highestNum);
+    }
 
+//    Find the most frequent number in the list using Streams.
+        public static void problem5() {
+            List<Integer> numbers = Arrays.asList(5, 7, 2, 7, 5, 9, 2, 7, 3, 5, 2, 7);
 
+            int mostFreq = numbers.stream()
+                    .collect(Collectors.groupingBy(num->num,Collectors.counting()))
+                    .entrySet().stream()
+                    .max(Map.Entry.comparingByValue())
+                    .map(Map.Entry:: getKey)
+                    .orElseThrow();
+
+            //optimized or chatgpt answer
+            int mostFreq2 = numbers.stream().collect(
+                    Collectors.collectingAndThen(
+                            Collectors.groupingBy(Function.identity(), Collectors.counting()),
+                            m -> m.entrySet().stream()
+                                  .max(Map.Entry.comparingByValue())
+                                  .map(Map.Entry::getKey)
+                                  .orElseThrow()
+                    ));
+
+            System.out.println("output for problem 5 :" + mostFreq);
+            System.out.println("output for problem 5 :" + mostFreq2);
+    }
+
+//    Group the words by their first character and print the groups.
+    public static void problem6() {
+        List<String> words = Arrays.asList("apple", "banana", "apricot", "cherry", "blueberry", "avocado");
+
+        Map<Character, List<String>> grp= words.stream()
+                .collect(Collectors.groupingBy(word->word.charAt(0)));
+
+        System.out.println("output for problem 6 :"+ grp);
     }
 }
